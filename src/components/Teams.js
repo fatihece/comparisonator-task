@@ -1,0 +1,55 @@
+import { Link, Switch, Route , useRouteMatch} from 'react-router-dom'
+import { useEffect, useState } from 'react'
+import axios from "axios";
+import Player from './Player';
+import { Card, Container, CardImg } from 'react-bootstrap'
+
+
+
+const Teams = () => {
+    const [teams, setTeams] = useState([])
+    const[loading, setLoading] = useState(true)
+    const { path, url } = useRouteMatch();
+
+    console.log(path, url)
+    useEffect(() => {
+        axios(" https://mock-foooty-api.herokuapp.com/teams")
+            .then(res => setTeams(res.data.teams))
+            .finally(()=> setLoading(false))
+    }, [])
+    return (
+        <Container >
+            <h1>Teams</h1>
+            {loading && <div>Loading...</div>}
+            <Container className="team-container" >
+                {
+                    teams.map((team) => (
+                   
+                        <Card  style={{ cursor: "pointer", border:"none" }} className="card-container">
+                            <CardImg src={team.icon} style={{ width: "60px", height: "60px", marginBottom: "0.5rem", marginTop:"0.6rem" }} alt="Card image" className="rounded mx-auto d-block" />
+                            
+                            <Card.Body>
+                                <Card.Text>
+                                    <Link to={`${url}/${team.id}`} className="justify-content-md-center row teamname">{team.name}
+                                    </Link>
+                                </Card.Text>
+                            </Card.Body>
+                        </Card>
+                     
+                    ))
+                }
+            
+        </Container>
+            
+    <Switch>
+        <Route exact path={path}>
+          <h3 style={{textAlign:'center'}}>Please select a team!</h3>
+        </Route>
+        <Route path={`${path}/:id`} component={Player}/>
+    </Switch>
+        
+        </Container>
+    )
+}
+
+export default Teams
