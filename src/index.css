@@ -1,8 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto&display=swap');
 * {
   box-sizing: border-box;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto&display=swap');
+
 body {
   margin: 0;
   font-family: 'Roboto', sans-serif;
@@ -10,30 +11,56 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
+/* code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
-}
-
-.page{
-  text-decoration: none;
-  color: #25AEFD;
-  margin-left: 1rem;
-  font-weight: bold;
-  font-size: 1.3rem;
-}
+} */
 
 .navbar{
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
+.page{
+  text-decoration: none;
+  color: #25AEFD;
+  margin-left: 1rem;
+  font-weight: bold;
+  font-size: 1.3rem;
+  padding: 2.2rem;
+}
+
+.page:hover{
+  background-color: #25AEFD;
+  color: #fff;
+}
+
 
 .team-container{
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   margin: auto;
   margin-top: .5rem;
+}
+
+.team-name{
+  color:#333;
+  background-color: #fff;
+}
+
+.team-name:hover{
+  background-color: #25AEFD;
+  color: #fff;
+  border-radius: 5px;
+ 
+}
+
+.card-container{
+  cursor: "pointer"; 
+  border:"none";
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .card-container:hover{
@@ -66,7 +93,22 @@ text-align: center;
   height: 70px;
   border-radius: 50%;
   border: 3px solid red;
-  
+}
+
+.Goalkeeper{
+  border: 3px solid #c0392b;
+}
+
+.Defender{
+  border: 3px solid #e67e22;
+}
+
+.Midfielder{
+  border:3px solid #8e44ad;
+}
+
+.Forward{
+  border: 3px solid #3498db
 }
 
 .player-info{

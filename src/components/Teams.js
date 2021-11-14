@@ -25,16 +25,18 @@ const Teams = () => {
                 {
                     teams.map((team) => (
                    
-                        <Card  style={{ cursor: "pointer", border:"none" }} className="card-container">
-                            <CardImg src={team.icon} style={{ width: "60px", height: "60px", marginBottom: "0.5rem", marginTop:"0.6rem" }} alt="Card image" className="rounded mx-auto d-block" />
+                    <Link to={`${url}/${team.id}`} className="justify-content-md-center row teamname">
+                        <Card  style={{border:"none", cursor:"pointer"}}>
+                            <CardImg src={team.icon} style={{ width: "60px", height: "60px", marginBottom: "0.5rem", marginTop:"0.6rem", marginLeft:"0.5rem" }} alt="Card image" className="rounded mx-auto d-block" />
                             
                             <Card.Body>
-                                <Card.Text>
-                                    <Link to={`${url}/${team.id}`} className="justify-content-md-center row teamname">{team.name}
-                                    </Link>
-                                </Card.Text>
+                                    <Card.Text className="team-name">
+                                        {team.name}
+                                     </Card.Text>
                             </Card.Body>
                         </Card>
+                    </Link>
+                    
                      
                     ))
                 }

@@ -25,7 +25,7 @@ const Player = () => {
                 <Container className="player-info">
                     
                     <img src={player.image}
-                        className="avatar"
+                        className={`avatar ${player.role.name}`}
                         alt={player.firstName}
                        />
                      
