@@ -2,11 +2,10 @@
   box-sizing: border-box;
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto&display=swap');
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: 'Roboto', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -16,7 +15,19 @@ code {
     monospace;
 }
 
+.page{
+  text-decoration: none;
+  color: #25AEFD;
+  margin-left: 1rem;
+  font-weight: bold;
+  font-size: 1.3rem;
+}
 
+.navbar{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
 .team-container{
   display: grid;
@@ -51,10 +62,10 @@ text-align: center;
 }
 
 .avatar{
-  width: 60px;
-  height: 60px;
+  width: 70px;
+  height: 70px;
   border-radius: 50%;
-  /* border: 3px solid red; */
+  border: 3px solid red;
   
 }
 
@@ -72,7 +83,7 @@ text-align: center;
 
 .fav-btn{
   position: relative;
-  right: 55px;
+  right: 40px;
   top: 20px;
   width: 25px;
 }
