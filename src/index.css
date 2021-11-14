@@ -88,6 +88,7 @@ font-weight: bold;
 text-align: center;
 }
 
+/* Players section */
 .avatar{
   width: 70px;
   height: 70px;
@@ -119,9 +120,9 @@ text-align: center;
   margin-bottom: 0.85rem;
 }
 
-.player-info:nth-child(odd) {
+/* .player-info:nth-child(odd) {
   background: #f9f9f9;
-}
+} */
 
 .fav-btn{
   position: relative;
@@ -132,9 +133,10 @@ text-align: center;
 
 .player-area{
   display: flex;
+  width: 5%;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-right: 10rem;
+  /* margin-right: 10rem; */
   
 }

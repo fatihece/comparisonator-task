@@ -1,51 +1,70 @@
-import React, {useEffect, useState} from 'react'
-import { useParams } from 'react-router'
-import axios from "axios"
-import star from "./image/star.png"
-import { Container, Row, Col } from 'react-bootstrap'
-
+import React, { useEffect, useState, useContext } from "react";
+import { useParams } from "react-router";
+import axios from "axios";
+import star from "./image/star.svg";
+import starFill from "./image/star-fill.svg";
+import { Container, Accordion } from "react-bootstrap";
+import Stats from "./Stats";
+import { MainContext } from "../context/Context";
 
 const Player = () => {
-    const[loading, setLoading] = useState(true)
-    const[players, setPlayers] = useState([])
-    const { id } = useParams();
+  const [loading, setLoading] = useState(true);
+  const [players, setPlayers] = useState([]);
+  const { id } = useParams();
+  const { likes, toggleLikes } = useContext(MainContext);
 
-    
-    useEffect(() => (
-        axios(`https://mock-foooty-api.herokuapp.com/teams/${id}/players`)
-            .then(res => setPlayers(res.data.players))
-            .finally(()=> setLoading(false))
-    ),[id])
+  useEffect(() => {
+    axios(`https://mock-foooty-api.herokuapp.com/teams/${id}/players`)
+      .then((res) => setPlayers(res.data.players))
+      .finally(() => setLoading(false));
+  }, []);
 
-    return (
-        <div>
-            <h1>Players</h1>
-            {loading && <div>Loading...</div>}
-            {players.map(player => (
-                <Container className="player-info">
-                    
-                    <img src={player.image}
-                        className={`avatar ${player.role.name}`}
-                        alt={player.firstName}
-                       />
-                     
-                    <img src={star} className="fav-btn" />
-                
-                    <div className="player-area">
-                        <span>{player.birthArea.iconcode}</span>
-                        <span>{player.passportArea.iconcode}</span>
-                    </div>    
-                        
-                    <p style={{width:"30%"}}>{player.firstName + " " + player.lastName}</p>
-                        
-                    <p style={{width:"20%"}}>{new Date().getFullYear()- (player.birthDate?.slice(0, 4))}</p>
-                       
-                    <p style={{width:"15%"}}>{player.foot}</p>
+  console.log(likes);
+  return (
+    <div>
+      <h1>Players</h1>
+      {loading && <div>Loading...</div>}
+      {players.map((player, index) => (
+        <Accordion key={index}>
+          <Accordion.Item eventKey={index}>
+            <Accordion.Header>
+              <Container className="player-info">
+                <img
+                  src={player.image}
+                  className={`avatar ${player.role.name}`}
+                  alt={player.firstName}
+                />
 
-                </Container>
-            ))}
-        </div>
-    )
-}
+                <img
+                  src={likes.find((like)=> like.id === player.id) ? starFill : star}
+                  className="fav-btn"
+                  onClick={() => toggleLikes(player)}
+                />
+
+                <div className="player-area">
+                  <span>{player.birthArea.iconcode}</span>
+                  <span>{player.passportArea.iconcode}</span>
+                </div>
+
+                <p style={{ width: "30%" }}>
+                  {player.firstName + " " + player.lastName}
+                </p>
+
+                <p style={{ width: "20%" }}>
+                  {new Date().getFullYear() - player.birthDate?.slice(0, 4)}
+                </p>
+
+                <p style={{ width: "15%" }}>{player.foot}</p>
+              </Container>
+            </Accordion.Header>
+            <Accordion.Body>
+              <Stats id={player.id} />
+            </Accordion.Body>
+          </Accordion.Item>
+        </Accordion>
+      ))}
+    </div>
+  );
+};
 
 export default Player;

@@ -1,9 +1,12 @@
-import Navbars from './components/Navbars'
-import './App.css';
+import Navbars from "./components/Navbars";
+import "./App.css";
+import MainContextProvider from "./context/Context";
 
 function App() {
-    return (
-        <Navbars />
+  return (
+    <MainContextProvider>
+      <Navbars />
+    </MainContextProvider>
   );
 }
 
