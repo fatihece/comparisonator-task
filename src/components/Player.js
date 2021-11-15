@@ -25,9 +25,9 @@ const Player = () => {
       <h1>Players</h1>
       {loading && <div>Loading...</div>}
       {players.map((player, index) => (
-        <Accordion key={index}>
-          <Accordion.Item eventKey={index}>
-            <Accordion.Header>
+        <Accordion key={index} >
+          <Accordion.Item eventKey={index} >
+            <Accordion.Header >
               <Container className="player-info">
                 <img
                   src={player.image}
@@ -69,10 +69,10 @@ const Player = () => {
                 </p>
 
                 <p style={{ width: "20%" }}>
-                  {new Date().getFullYear() - player.birthDate?.slice(0, 4)}
+                  Age: {new Date().getFullYear() - player.birthDate?.slice(0, 4)}
                 </p>
 
-                <p style={{ width: "15%" }}>{player.foot}</p>
+                <p style={{ width: "15%" }}>Foot: {player.foot}</p>
               </Container>
             </Accordion.Header>
             <Accordion.Body>
