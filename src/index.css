@@ -126,8 +126,8 @@ text-align: center;
 
 .fav-btn{
   position: relative;
-  right: 40px;
-  top: 20px;
+  left: 0;
+  top: 0;
   width: 25px;
 }
 
