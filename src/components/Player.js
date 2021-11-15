@@ -1,8 +1,8 @@
 import React, { useEffect, useState, useContext } from "react";
 import { useParams } from "react-router";
 import axios from "axios";
-import star from "./image/star.svg";
-import starFill from "./image/star-fill.svg";
+import star from "../image/star.svg";
+import starFill from "../image/star-fill.svg";
 import { Container, Accordion } from "react-bootstrap";
 import Stats from "./Stats";
 import { MainContext } from "../context/Context";

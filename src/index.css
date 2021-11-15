@@ -90,8 +90,8 @@ text-align: center;
 
 /* Players section */
 .avatar{
-  width: 70px;
-  height: 70px;
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
   border: 3px solid red;
 }
@@ -118,7 +118,7 @@ text-align: center;
   align-items: center;
   max-width: 90%; ;
  
-  height: 2.5rem;
+  height: 2.3rem;
   /* margin-bottom: 0.85rem; */
 }
 
