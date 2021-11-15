@@ -36,14 +36,32 @@ const Player = () => {
                 />
 
                 <img
-                  src={likes.find((like)=> like.id === player.id) ? starFill : star}
+                  src={
+                    likes.find((like) => like.id === player.id)
+                      ? starFill
+                      : star
+                  }
                   className="fav-btn"
                   onClick={() => toggleLikes(player)}
                 />
 
                 <div className="player-area">
-                  <span>{player.birthArea.iconcode}</span>
-                  <span>{player.passportArea.iconcode}</span>
+                  <span>
+                    <img
+                      src={`https://flagcdn.com/16x12/${player.birthArea.iconcode}.png`}
+                      width="16"
+                      height="12"
+                      alt={player.birthArea.iconcode}
+                    />
+                  </span>
+                  <span>
+                    <img
+                      src={`https://flagcdn.com/16x12/${player.passportArea.iconcode}.png`}
+                      width="16"
+                      height="12"
+                      alt={player.passportArea.iconcode}
+                    />
+                  </span>
                 </div>
 
                 <p style={{ width: "30%" }}>
