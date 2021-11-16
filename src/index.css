@@ -154,3 +154,9 @@ text-align: center;
 .column ul{
   list-style-type: none;
 }
+
+
+.progress-circle{
+  display: flex;
+  flex-direction: column;
+}

@@ -1,12 +1,15 @@
 import React, { useEffect, useState } from "react";
 // import { useParams } from "react-router";
 import axios from "axios";
-// import { Container, Row, Col } from "react-bootstrap";
-// import { Link, useRouteMatch } from "react-router-dom";
+// import { Component } from "react";
+ 
+import SemiCircleProgressBar from "react-progressbar-semicircle";
 
 const Stats = ({ id }) => {
   const [stats, setStats] = useState([]);
   const [loading, setLoading] = useState(true);
+
+  
 
   useEffect(
     () =>
@@ -19,11 +22,15 @@ const Stats = ({ id }) => {
   return (
     <div className="stats-container">
       {loading && <div>Loading...</div>}
-      {/* <p>{stats.goals}</p>
-      <p>{stats.assists}</p>
-      <p>{stats.passes}</p> */}
-      <div>
-      progress bar
+  
+      <div className="progress-circle">
+        <SemiCircleProgressBar 
+          percentage={Math.round(stats.index)}
+          showPercentValue
+       />
+        
+        <p style={{ color: "#25AEFD", fontWeight: "bold",textAlign:"center" }}> COMPARİSONATOR</p>
+        <p style={{ color: "#25AEFD", fontWeight: "bold", textAlign:"center", marginLeft:".9" }}> INDEX</p>
       </div>
 
       <div className="column">
