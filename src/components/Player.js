@@ -64,7 +64,7 @@ const Player = () => {
                   </span>
                 </div>
 
-                <p style={{ width: "30%" }}>
+                <p style={{ width: "30%", fontWeight:"bolder" }}>
                   {player.firstName + " " + player.lastName}
                 </p>
 
