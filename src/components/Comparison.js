@@ -1,9 +1,11 @@
 import React from 'react'
 
-const Comparison = () => {
+const Comparison = ({id}) => {
     return (
         <div>
             Comparison
+        
+        
         </div>
     )
 }
