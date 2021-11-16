@@ -21,6 +21,7 @@ body {
   justify-content: space-between;
   align-items: center;
 }
+
 .page{
   text-decoration: none;
   color: #25AEFD;
@@ -117,7 +118,6 @@ text-align: center;
   justify-content: space-evenly;
   align-items: center;
   max-width: 90%; ;
- 
   height: 2.3rem;
   /* margin-bottom: 0.85rem; */
 }
@@ -135,4 +135,22 @@ text-align: center;
   flex-direction: column;
   justify-content: center;
   align-items: center;  
+}
+
+/* Stats container */
+
+.stats-container{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.column{
+  display: flex;
+  justify-content: space-around;
+ 
+}
+
+.column ul{
+  list-style-type: none;
 }
