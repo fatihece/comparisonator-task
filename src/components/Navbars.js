@@ -1,11 +1,11 @@
 import React from 'react'
 import 'bootstrap/dist/css/bootstrap.css'
-import { Nav, Navbar, Button } from 'react-bootstrap'
+import { Nav, Navbar} from 'react-bootstrap'
 
 import Teams from './Teams'
 import Comparison from './Comparison'
 import {
-  NavLink, Link, Route, Switch
+  Link, Route, Switch
 } from "react-router-dom";
 
 
@@ -16,7 +16,7 @@ const Navbars = () => {
         sticky="top" expand="sm" collapseOnSelect className="navbar">
         
         <Navbar.Brand>
-          <img src="	https://comparisonator.com/wp-content/uploads/2021/01/comparisonator-wide-logo.png" width="317px" height="80px"  />{' '} 
+          <img src="	https://comparisonator.com/wp-content/uploads/2021/01/comparisonator-wide-logo.png" width="317px" height="80px" alt="" />{' '} 
         </Navbar.Brand>
 
           <Navbar.Toggle className="coloring" />

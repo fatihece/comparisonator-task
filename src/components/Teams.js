@@ -15,6 +15,7 @@ const Teams = () => {
       .then((res) => setTeams(res.data.teams))
       .finally(() => setLoading(false));
   }, []);
+  
   return (
     <Container>
       <h1>Teams</h1>
@@ -49,8 +50,12 @@ const Teams = () => {
       </Container>
 
       <Switch>
+        <Route exact path={path}>
+          <h3 style={{ textAlign: "center" }}>Please select a team!</h3>
+        </Route>
         <Route path={`${path}/:id`} component={Player} />
       </Switch>
+
     </Container>
   );
 };

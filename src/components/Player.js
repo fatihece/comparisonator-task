@@ -17,7 +17,7 @@ const Player = () => {
     axios(`https://mock-foooty-api.herokuapp.com/teams/${id}/players`)
       .then((res) => setPlayers(res.data.players))
       .finally(() => setLoading(false));
-  }, []);
+  }, [id]);
 
   console.log(likes);
   return (
@@ -40,9 +40,11 @@ const Player = () => {
                     likes.find((like) => like.id === player.id)
                       ? starFill
                       : star
+                    
                   }
                   className="fav-btn"
                   onClick={() => toggleLikes(player)}
+                  alt=""
                 />
 
                 <div className="player-area">
