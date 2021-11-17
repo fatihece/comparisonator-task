@@ -19,13 +19,16 @@ const Stats = ({ id }) => {
       {loading && <div>Loading...</div>}
   
       <div className="progress-circle">
-        <SemiCircleProgressBar className="progress-bar"
+        <SemiCircleProgressBar 
           percentage={Math.round(stats.index)}
-          showPercentValue
+          
           stroke={"#25AEFD"}
-          />
 
-        <p style={{ color: "#25AEFD", fontWeight: "bold",textAlign:"center" }}> COMPARİSONATOR</p>
+          />
+        <p style={{ color: "#25AEFD", fontWeight: "bold", textAlign: "center", fontSize: "2rem", marginBottom: "-0.3rem", marginTop:"-1.2rem" }}>
+          {Math.round(stats.index)}
+        </p>
+        <p style={{ color: "#25AEFD", fontWeight: "bold",textAlign:"center", marginBottom:"-0.3rem" }}> COMPARİSONATOR</p>
         <p style={{ color: "#25AEFD", fontWeight: "bold", textAlign:"center", marginLeft:".9" }}> INDEX</p>
       </div>
 

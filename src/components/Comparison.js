@@ -1,24 +1,13 @@
-import React,{useContext} from 'react'
-import { MainContext } from "../context/Context";
+import React from 'react'
 
 
 
-const Comparison = ({id}) => {
-    const { likes } = useContext(MainContext);
-    
+
+const Comparison = () => {
+
     return (
-
         <div>
-            
-            {
-                likes.map((like) => {
-                    return (
-                        <li>{like}</li>
-                    )
-                })
-            }
-        
-        
+            <h3 style={{textAlign:"center"}}> You can view this page soon</h3>    
         </div>
     )
 }
