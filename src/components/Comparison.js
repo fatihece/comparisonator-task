@@ -1,9 +1,22 @@
-import React from 'react'
+import React,{useContext} from 'react'
+import { MainContext } from "../context/Context";
+
+
 
 const Comparison = ({id}) => {
+    const { likes } = useContext(MainContext);
+    
     return (
+
         <div>
-            Comparison
+            
+            {
+                likes.map((like) => {
+                    return (
+                        <li>{like}</li>
+                    )
+                })
+            }
         
         
         </div>

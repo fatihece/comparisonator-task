@@ -1,15 +1,10 @@
 import React, { useEffect, useState } from "react";
-// import { useParams } from "react-router";
 import axios from "axios";
-// import { Component } from "react";
- import { ProgressBar } from "react-bootstrap";
 import SemiCircleProgressBar from "react-progressbar-semicircle";
 
 const Stats = ({ id }) => {
   const [stats, setStats] = useState([]);
   const [loading, setLoading] = useState(true);
-
-  
 
   useEffect(
     () =>
@@ -29,8 +24,7 @@ const Stats = ({ id }) => {
           showPercentValue
           stroke={"#25AEFD"}
           />
-        {/* <ProgressBar variant="info" now={stats.index} /> */}
-        {/* <p style={{textAlign:"center"}}>{Math.round(stats.index)}</p> */}
+
         <p style={{ color: "#25AEFD", fontWeight: "bold",textAlign:"center" }}> COMPARİSONATOR</p>
         <p style={{ color: "#25AEFD", fontWeight: "bold", textAlign:"center", marginLeft:".9" }}> INDEX</p>
       </div>
@@ -66,13 +60,6 @@ const Stats = ({ id }) => {
                         })}
         </ul>
       </div>
-
-
-
-
-
-
-
     </div>
   );
 };
