@@ -160,3 +160,8 @@ text-align: center;
   display: flex;
   flex-direction: column;
 }
+
+.progress-bar{
+color: #25AEFD;
+font-size: 5rem;
+}
