@@ -1,6 +1,6 @@
-<h1 align="center">Lets talk about football ⚽🎉</h1>
+<h1 align="center">Let's talk about football ⚽🎉</h1>
 
-### ✨ [Demo]https://alphabet-of-football.netlify.app/)
+### ✨ [Demo](https://alphabet-of-football.netlify.app/)
 
   </br>
 <a href='https://alphabet-of-football.netlify.app/' target='_blank' align="center">
