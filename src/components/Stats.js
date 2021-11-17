@@ -26,8 +26,7 @@ const Stats = ({ id }) => {
       <div className="progress-circle">
         <SemiCircleProgressBar 
           percentage={Math.round(stats.index)}
-          showPercentValue
-       />
+          showPercentValue />
         
         <p style={{ color: "#25AEFD", fontWeight: "bold",textAlign:"center" }}> COMPARİSONATOR</p>
         <p style={{ color: "#25AEFD", fontWeight: "bold", textAlign:"center", marginLeft:".9" }}> INDEX</p>
